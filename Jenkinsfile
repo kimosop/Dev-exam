@@ -29,7 +29,10 @@ stage('Apply changes to the environment')
 {
 sh "ls -l"
 }
-
+stage('Deploy (Docker run the image)')
+{
+sh "docker run -d -p 6503:80/tcp Dev-exam:latest"
+}
 
 
 }
